@@ -172,7 +172,7 @@ export default function Home() {
           </div>
         </div>
         <div className='container h-[50%] flex items-end text-center justify-center'>
-          <Link href="">Made with <span className="text-[#f8312f]">♥️</span> by Sanghyuk Park.</Link>
+          <Link href="https://github.com/ArdanKR/portfolio">Made with <span className="text-[#f8312f]">♥️</span> by Sanghyuk Park.</Link>
         </div>
       </div>
       </div>
