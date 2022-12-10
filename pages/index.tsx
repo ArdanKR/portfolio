@@ -25,7 +25,7 @@ export default function Home() {
       throttle: 50,
       orientation: 'vertical',
       swipeThreshold: 50,
-      freeScroll: false,
+      freeScroll: true,
       navPrevEl: false,
       navNextEl: false,
       infinite: false,
