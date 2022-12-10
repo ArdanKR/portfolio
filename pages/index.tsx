@@ -21,10 +21,11 @@ export default function Home() {
       anchors: [],
       pips: false,
       animation: 300,
-      delay: 0,
+      delay: 1,
       throttle: 50,
       orientation: 'vertical',
-      swipeThreshold: 50,
+      swipeThreshold: 50
+      ,
       freeScroll: true,
       navPrevEl: false,
       navNextEl: false,
@@ -47,6 +48,12 @@ export default function Home() {
 
   useEffect(() => {
     loadPageable()
+    Array.from(document.querySelectorAll('a')).forEach((el) => {
+      if(!el.dataset.href) return
+      el.addEventListener('touchend', () => {
+        window.open(el.dataset.href, '_blank')
+      });
+    });
   })
 
 
@@ -99,10 +106,10 @@ export default function Home() {
           <h1 className='logo font-bold text-3xl sm:text-5xl'>👋 Hi, there</h1>
           <p className='mt-4'>I{"'"}m <span className='marker'>Sanghyuk Park</span>, a high school student developer from South Korea.</p>
           <div className='flex gap-x-2 mt-2'>
-          <Link href="https://github.com/ArdanKR" target={"_blank"} className="text-2xl shadow-md flex rounded-full dark:bg-black bg-white p-1 cursor-pointer">
+          <Link href="https://github.com/ardankr" data-href="https://github.com/ardankr" className="doclink text-2xl shadow-md flex rounded-full dark:bg-black bg-white p-1 cursor-pointer">
             <AiFillGithub></AiFillGithub>
           </Link>
-          <Link href="https://twitter.com/kr_ardan" target={"_blank"} className="text-2xl shadow-md flex rounded-full dark:bg-black bg-white p-1 cursor-pointer text-[#1d9bf0]">
+          <Link href="https://twitter.com/kr_ardan" data-href="https://twitter.com/kr_ardan" className="doclink text-2xl shadow-md flex rounded-full dark:bg-black bg-white p-1 cursor-pointer text-[#1d9bf0]">
             <AiOutlineTwitter></AiOutlineTwitter>
           </Link>
           </div>
@@ -167,12 +174,12 @@ export default function Home() {
           <div>
             <h1 className='logo font-bold text-3xl sm:text-5xl'>Contact</h1>
             <ul className='mt-4'>
-              <li>📬 <span className='logo'>Email</span>: <span className='underline'><Link href={"mailto:contact@ardan.kr"}>contact@ardan.kr</Link></span></li>
+              <li>📬 <span className='logo'>Email</span>: <span className='underline'><Link data-href={"mailto:contact@ardan.kr"} href={"mailto:contact@ardan.kr"}>contact@ardan.kr</Link></span></li>
             </ul>
           </div>
         </div>
         <div className='container h-[50%] flex items-end text-center justify-center'>
-          <Link href="https://github.com/ArdanKR/portfolio">Made with <span className="text-[#f8312f]">♥️</span> by Sanghyuk Park.</Link>
+          <Link className='doclink' data-href="https://github.com/ArdanKR/portfolio" href="https://github.com/ArdanKR/portfolio" target={"_blank"}>Made with <span className="text-[#f8312f]">♥️</span> by Sanghyuk Park.</Link>
         </div>
       </div>
       </div>
