@@ -74,10 +74,10 @@ const Nav: React.FC<{
         <div className="nav-row mt-16 flex flex-col pb-8 text-lg text-black" data-cursor="-opaque">
           <div className="flex p-6 sm:px-8 flex-col gap-y-4">
             <div className="flex">
-              <Link href="/about" className="text-3xl underline">About</Link>
+              <Link href="/#2" onClick={() => setOpen(!open)} className="text-3xl underline">About</Link>
             </div>
             <div className="flex">
-              <Link href="/work" className="text-3xl underline">Work</Link>
+              <Link href="/#4" onClick={() => setOpen(!open)} className="text-3xl underline">Work</Link>
             </div>
           </div>
         </div>
