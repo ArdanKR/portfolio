@@ -1,18 +1,20 @@
-import { Suspense, useState } from "react"
-import { IoMenuOutline } from "react-icons/io5"
-import Link from "next/link"
+import { Suspense, useState } from "react";
+import { IoMenuOutline } from "react-icons/io5";
+import Link from "next/link";
 
 const Nav: React.FC<{
-  className?: string
-  navWhite?: boolean
-  bgColor?: string
-  logoType?: string
+  className?: string;
+  navWhite?: boolean;
+  bgColor?: string;
+  logoType?: string;
 }> = ({ className, navWhite, logoType, bgColor }) => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div
-      className={`relative z-20 ${open ? "menu-open" : ""} ${className ? className : ""} ${
+      className={`relative z-20 ${open ? "menu-open" : ""} ${
+        className ? className : ""
+      } ${
         navWhite
           ? "border-neutral-700/80 bg-black/80 text-[#fff] "
           : "border-neutral-200/80  "
@@ -29,7 +31,11 @@ const Nav: React.FC<{
           </div>
 
           <div className="flex items-center justify-evenly space-x-4 text-sm dark:text-gray-100 lg:space-x-8">
-            <button id="nav-button" className="py-2 " onClick={() => setOpen(!open)}>
+            <button
+              id="nav-button"
+              className="py-2 "
+              onClick={() => setOpen(!open)}
+            >
               <IoMenuOutline size={32} />
             </button>
           </div>
@@ -71,20 +77,44 @@ const Nav: React.FC<{
         </button>
 
         <div className="h-full flex flex-col">
-        <div className="nav-row mt-16 flex flex-col pb-8 text-lg text-black" data-cursor="-opaque">
-          <div className="flex p-6 sm:px-8 flex-col gap-y-4">
-            <div className="flex">
-              <Link href="/#2" onClick={() => setOpen(!open)} className="text-3xl underline">About</Link>
-            </div>
-            <div className="flex">
-              <Link href="/#4" onClick={() => setOpen(!open)} className="text-3xl underline">Work</Link>
+          <div
+            className="nav-row mt-16 flex flex-col pb-8 text-lg text-black"
+            data-cursor="-opaque"
+          >
+            <div className="flex p-6 sm:px-8 flex-col gap-y-4">
+              <div className="flex">
+                <Link
+                  href="/#2"
+                  onClick={() => setOpen(!open)}
+                  className="text-3xl underline"
+                >
+                  About
+                </Link>
+              </div>
+              <div className="flex">
+                <Link
+                  href="/#4"
+                  onClick={() => setOpen(!open)}
+                  className="text-3xl underline"
+                >
+                  Work
+                </Link>
+              </div>
+              <div className="flex">
+                <Link
+                  href="https://blog.ardan.kr/"
+                  onClick={() => setOpen(!open)}
+                  className="text-3xl underline"
+                >
+                  Blog
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="absolute p-6 sm:px-8 bottom-0">© Sanghyuk Park.</div>
+          <div className="absolute p-6 sm:px-8 bottom-0">© Sanghyuk Park.</div>
         </div>
       </div>
     </div>
-  )
-}
-export default Nav
+  );
+};
+export default Nav;
